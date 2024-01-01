@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameInfo>
+	<GlobalParameters>
+		<Replace Name="BARBARIAN_BOLDNESS_PER_CAMP_ATTACK" Value="-20" /> <!--default -30-->
+		<Replace Name="BARBARIAN_BOLDNESS_PER_KILL" Value="25" /> <!--default 15-->
+		<Replace Name="BARBARIAN_BOLDNESS_PER_SCOUT_LOST" Value="5" /> <!--default -5-->
+		<Replace Name="BARBARIAN_BOLDNESS_PER_TURN" Value="4" /> <!--default 2-->
+		<Replace Name="BARBARIAN_BOLDNESS_PER_UNIT_LOST" Value="-5" /> <!--default -10-->
+		<Replace Name="BARBARIAN_CAMP_MAX_PER_MAJOR_CIV" Value="6" /> <!--default 3-->
+		<Replace Name="BARBARIAN_CAMP_MINIMUM_DISTANCE_ANOTHER_CAMP" Value="4" /> <!--default 7-->	
+		<Replace Name="BARBARIAN_CAMP_ODDS_OF_NEW_CAMP_SPAWNING" Value="3" /> <!--default 2-->
+		<Replace Name="EXPERIENCE_BARB_SOFT_CAP" Value="2" /> <!--default 1-->
+		<Replace Name="BARBARIAN_TECH_PERCENT" Value="75" /> <!--default 50-->
+		<Replace Name="BARBARIAN_LOWER_THROTTLE_PER_DIFFICULTY" Value="2" /> <!--default 3-->
+		<Replace Name="BARBARIAN_MAX_THROTTLE_PER_RAID" Value="24" /> <!--default 18-->
+		<!-- vvv UNCHANGED vvv
+		<Replace Name="BARBARIAN_CAMP_MINIMUM_DISTANCE_CITY" Value="4" />
+		<Replace Name="BARBARIAN_CAMP_COASTAL_SPAWN_ROLL" Value="6" />
+		<Replace Name="BARBARIAN_CAMP_EXTRA_DISTANCE_PER_LOW_DIFFICULTY" Value="1" />
+		<Replace Name="BARBARIAN_CAMP_FIRST_TURN_PERCENT_OF_TARGET_TO_ADD" Value="33" />
+		<Replace Name="BARBARIAN_DEFENSE_ALL_UNITS" Value="4" />
+		<Replace Name="BARBARIAN_DEFENSE_RANGED_UNITS" Value="1" />
+		<Replace Name="BARBARIAN_NUM_RANDOM_UNIT_CHOICES" Value="3" />
+		<Replace Name="BARBARIAN_RELEASE_VARIATION" Value="20" />
+		<Replace Name="EXPERIENCE_MAX_BARB_LEVEL" Value="2" />
+		<Replace Name="MAYHEM_CITY_DEATH_WITH_BARBARIANS" Value="2.0" />
+		<Replace Name="MAYHEM_DISTRICT_DEATH_WITH_BARBARIANS" Value="0.5" />
+		<Replace Name="MAYHEM_UNIT_COMBAT_WITH_BARBARIANS" Value="0.5" />
+		<Replace Name="MAYHEM_UNIT_DEATH_WITH_BARBARIANS" Value="0.5" />
+		 -->
+	</GlobalParameters>
+	<BarbarianTribes>
+		<Update>
+			<Where TribeType="TRIBE_NAVAL"/>
+			<!-- <Set PercentRangedUnits="25" TurnsToWarriorSpawn="10" ScoutTag="CLASS_NAVAL_MELEE" MeleeTag="CLASS_NAVAL_MELEE" RangedTag="CLASS_NAVAL_RANGED" SiegeTag="CLASS_NAVAL_RANGED" DefenderTag="CLASS_ANTI_CAVALRY" RaidingBoldness="10" CityAttackBoldness="25"/> --> <!-- ORIGINAL -->
+			<Set PercentRangedUnits="25" TurnsToWarriorSpawn="10" ScoutTag="CLASS_BARB_NAVAL" MeleeTag="CLASS_BARB_RAIDER" RangedTag="CLASS_BARB_NAVAL" SiegeTag="CLASS_BARB_NAVAL" DefenderTag="CLASS_BARB_ANTICAV" RaidingBoldness="10" CityAttackBoldness="25"/> <!-- CUSTOM -->
+		</Update>
+		<Update>
+			<Where TribeType="TRIBE_CAVALRY"/>
+			<!-- <Set PercentRangedUnits="33" TurnsToWarriorSpawn="25" ScoutTag="CLASS_RECON" MeleeTag="CLASS_MELEE" RangedTag="CLASS_RANGED" SiegeTag="CLASS_SIEGE" DefenderTag="CLASS_ANTI_CAVALRY" RaidingBoldness="10" CityAttackBoldness="25"/> --> <!-- ORIGINAL -->
+			<Set PercentRangedUnits="33" TurnsToWarriorSpawn="15" ScoutTag="CLASS_BARB_RECON" MeleeTag="CLASS_BARB_LIGHT_CAV" RangedTag="CLASS_BARB_HEAVY_CAV" SiegeTag="CLASS_BARB_SIEGE" DefenderTag="CLASS_BARB_RANGED" RaidingBoldness="10" CityAttackBoldness="20"/>
+		</Update>
+		<Update>
+			<Where TribeType="TRIBE_MELEE"/>
+			<!-- <Set PercentRangedUnits="25" TurnsToWarriorSpawn="15" ScoutTag="CLASS_RECON" MeleeTag="CLASS_MELEE" RangedTag="CLASS_RANGED" SiegeTag="CLASS_SIEGE" DefenderTag="CLASS_ANTI_CAVALRY" SupportTag="CLASS_BATTERING_RAM" RaidingBoldness="10" CityAttackBoldness="25"/> --> <!-- ORIGINAL -->
+			<Set PercentRangedUnits="33" TurnsToWarriorSpawn="10" ScoutTag="CLASS_BARB_RECON" MeleeTag="CLASS_BARB_MELEE" RangedTag="CLASS_BARB_RANGED" SiegeTag="CLASS_BARB_SIEGE" DefenderTag="CLASS_BARB_ANTICAV" SupportTag="CLASS_SIEGE" RaidingBoldness="10" CityAttackBoldness="20"/>
+		</Update>
+		<!-- Barbarian Clan Mode -->
+		<Update>
+			<Where TribeType="TRIBE_CLAN_MELEE_OPEN"/>
+			<!-- <Set PercentRangedUnits="25" TurnsToWarriorSpawn="10" ScoutTag="CLASS_RECON" MeleeTag="CLASS_MELEE" RangedTag="CLASS_RANGED" SiegeTag="CLASS_SIEGE" DefenderTag="CLASS_ANTI_CAVALRY" SupportTag="CLASS_LIGHT_CAVALRY" RaidingBoldness="15" CityAttackBoldness="25"/> --> <!-- ORIGINAL -->
+			<Set PercentRangedUnits="35" TurnsToWarriorSpawn="10" ScoutTag="CLASS_BARB_RECON" MeleeTag="CLASS_BARB_MELEE" RangedTag="CLASS_BARB_RANGED" SiegeTag="CLASS_BARB_SIEGE" DefenderTag="CLASS_BARB_ANTICAV" SupportTag="CLASS_BARB_LIGHT_CAV" RaidingBoldness="10" CityAttackBoldness="20"/> <!-- CUSTOM -->
+		</Update>
+		<Update>
+			<Where TribeType="TRIBE_CLAN_MELEE_FOREST"/>
+			<!-- <Set PercentRangedUnits="50" TurnsToWarriorSpawn="15" ScoutTag="CLASS_RECON" MeleeTag="CLASS_MELEE" RangedTag="CLASS_RANGED" SiegeTag="CLASS_SIEGE" DefenderTag="CLASS_RANGED" SupportTag="CLASS_BATTERING_RAM" RaidingBoldness="15" CityAttackBoldness="20"/> --> <!-- ORIGINAL -->
+			<Set PercentRangedUnits="50" TurnsToWarriorSpawn="15" ScoutTag="CLASS_BARB_RECON" MeleeTag="CLASS_BARB_MELEE" RangedTag="CLASS_BARB_RANGED" SiegeTag="CLASS_BARB_SIEGE" DefenderTag="CLASS_BARB_RANGED" SupportTag="CLASS_BARB_SIEGE" RaidingBoldness="15" CityAttackBoldness="20"/> <!-- CUSTOM -->
+		</Update>
+		<Update>
+			<Where TribeType="TRIBE_CLAN_MELEE_HILLS"/>
+			<!-- <Set PercentRangedUnits="15" TurnsToWarriorSpawn="15" ScoutTag="CLASS_RECON" MeleeTag="CLASS_MELEE" RangedTag="CLASS_ANTI_CAVALRY" SiegeTag="CLASS_SIEGE" DefenderTag="CLASS_MELEE" SupportTag="CLASS_RANGED" RaidingBoldness="20" CityAttackBoldness="30"/> --> <!-- ORIGINAL -->
+			<Set PercentRangedUnits="20" TurnsToWarriorSpawn="15" ScoutTag="CLASS_BARB_RECON" MeleeTag="CLASS_BARB_MELEE" RangedTag="CLASS_BARB_ANTICAV" SiegeTag="CLASS_BARB_SIEGE" DefenderTag="CLASS_BARB_MELEE" SupportTag="CLASS_BARB_RANGED" RaidingBoldness="20" CityAttackBoldness="25"/> <!-- CUSTOM -->
+		</Update>
+		<Update>
+			<Where TribeType="TRIBE_CLAN_CAVALRY_OPEN"/>
+			<!-- <Set PercentRangedUnits="25" TurnsToWarriorSpawn="20" ScoutTag="CLASS_RECON" MeleeTag="CLASS_LIGHT_CAVALRY" RangedTag="CLASS_MOBILE_RANGED" SiegeTag="CLASS_HEAVY_CAVALRY" DefenderTag="CLASS_ANTI_CAVALRY" SupportTag="CLASS_BATTERING_RAM" RaidingBoldness="20" CityAttackBoldness="25"/> --> <!-- ORIGINAL -->
+			<Set PercentRangedUnits="25" TurnsToWarriorSpawn="15" ScoutTag="CLASS_BARB_RECON" MeleeTag="CLASS_BARB_LIGHT_CAV" RangedTag="CLASS_BARB_SIEGE" SiegeTag="CLASS_BARB_HEAVY_CAV" DefenderTag="CLASS_BARB_ANTICAV" SupportTag="CLASS_BARB_SIEGE" RaidingBoldness="15" CityAttackBoldness="20"/> <!-- CUSTOM -->
+		</Update>
+		<Update>
+			<Where TribeType="TRIBE_CLAN_CAVALRY_JUNGLE"/>
+			<!-- <Set PercentRangedUnits="20" TurnsToWarriorSpawn="20" ScoutTag="CLASS_RECON" MeleeTag="CLASS_LIGHT_CAVALRY" RangedTag="CLASS_RANGED" SiegeTag="CLASS_HEAVY_CAVALRY" DefenderTag="CLASS_MELEE" SupportTag="CLASS_BATTERING_RAM" RaidingBoldness="15" CityAttackBoldness="25"/> --> <!-- ORIGINAL -->
+			<Set PercentRangedUnits="20" TurnsToWarriorSpawn="15" ScoutTag="CLASS_BARB_RECON" MeleeTag="CLASS_BARB_LIGHT_CAV" RangedTag="CLASS_BARB_RANGE" SiegeTag="CLASS_BARB_HEAVY_CAV" DefenderTag="CLASS_BARB_MELEE" SupportTag="CLASS_BARB_SIEGE" RaidingBoldness="15" CityAttackBoldness="20"/> <!-- CUSTOM -->
+		</Update>
+		<Update>
+			<Where TribeType="TRIBE_CLAN_CAVALRY_CHARIOT"/>
+			<!-- <Set PercentRangedUnits="35" TurnsToWarriorSpawn="20" ScoutTag="CLASS_RECON" MeleeTag="CLASS_LIGHT_CAVALRY" RangedTag="CLASS_HEAVY_CHARIOT" SiegeTag="CLASS_HEAVY_CHARIOT" DefenderTag="CLASS_RANGED" SupportTag="CLASS_BATTERING_RAM" RaidingBoldness="15" CityAttackBoldness="25"/> --> <!-- ORIGINAL -->
+			<Set PercentRangedUnits="35" TurnsToWarriorSpawn="15" ScoutTag="CLASS_BARB_RECON" MeleeTag="CLASS_BARB_LIGHT_CAV" RangedTag="CLASS_BARB_HEAVY_CAV" SiegeTag="CLASS_BARB_HEAVY_CAV" DefenderTag="CLASS_BARB_RANGED" SupportTag="CLASS_BARB_SIEGE" RaidingBoldness="15" CityAttackBoldness="20"/> <!-- CUSTOM -->
+		</Update>
+		<Update>
+			<Where TribeType="TRIBE_CLAN_NAVAL"/>
+			<!-- <Set PercentRangedUnits="35" TurnsToWarriorSpawn="10" ScoutTag="CLASS_NAVAL_MELEE" MeleeTag="CLASS_NAVAL_MELEE" RangedTag="CLASS_NAVAL_RANGED" SiegeTag="CLASS_NAVAL_RANGED" DefenderTag="CLASS_ANTI_CAVALRY" RaidingBoldness="10" CityAttackBoldness="25"/> --> <!-- ORIGINAL -->
+			<Set PercentRangedUnits="35" TurnsToWarriorSpawn="10" ScoutTag="CLASS_BARB_NAVAL" MeleeTag="CLASS_BARB_RAIDER" RangedTag="CLASS_BARB_NAVAL" SiegeTag="CLASS_BARB_NAVAL" DefenderTag="CLASS_BARB_ANTICAV" RaidingBoldness="10" CityAttackBoldness="25"/> <!-- CUSTOM -->
+		</Update>
+	</BarbarianTribes>
+	<BarbarianAttackForces>
+		<Update>
+			<Where AttackForceType="LowDifficultyStandardRaid"/>
+			<Set MaxTargetDifficulty="DIFFICULTY_CHIEFTAIN" SpawnRate="2" MeleeTag="CLASS_BARB_MELEE" NumMeleeUnits="1" RaidingForce="true"/>
+		</Update>
+		<Update>
+			<Where AttackForceType="StandardRaid"/>
+			<Set MinTargetDifficulty="DIFFICULTY_WARLORD" MaxTargetDifficulty="DIFFICULTY_EMPEROR" SpawnRate="2" MeleeTag="CLASS_BARB_MELEE" NumMeleeUnits="2" RangeTag="CLASS_BARB_RANGED" NumRangeUnits="1" RaidingForce="true"/>
+		</Update>
+		<Update>
+			<Where AttackForceType="HighDifficultyStandardRaid"/>
+			<Set MinTargetDifficulty="DIFFICULTY_IMMORTAL" SpawnRate="1" MeleeTag="CLASS_BARB_MELEE" NumMeleeUnits="3" RangeTag="CLASS_BARB_RANGED" NumRangeUnits="2" RaidingForce="true"/>
+		</Update>
+		<Update>
+			<Where AttackForceType="LowDifficultyStandardAttack"/>
+			<Set MaxTargetDifficulty="DIFFICULTY_CHIEFTAIN" SpawnRate="2" MeleeTag="CLASS_BARB_MELEE" NumMeleeUnits="2" RangeTag="CLASS_BARB_RANGED" NumRangeUnits="1" SiegeTag="CLASS_BARB_SIEGE" NumSiegeUnits="1"/>
+		</Update>
+		<Update>
+			<Where AttackForceType="StandardAttack"/>
+			<Set MinTargetDifficulty="DIFFICULTY_WARLORD" MaxTargetDifficulty="DIFFICULTY_EMPEROR" SpawnRate="2" MeleeTag="CLASS_BARB_MELEE" NumMeleeUnits="3" RangeTag="CLASS_BARB_RANGED" NumRangeUnits="2" SiegeTag="CLASS_BARB_SIEGE" NumSiegeUnits="1" SupportTag="CLASS_BARB_SIEGE" NumSupportUnits="0"/>
+		</Update>
+		<Update>
+			<Where AttackForceType="HighDifficultyStandardAttack"/>
+			<Set MinTargetDifficulty="DIFFICULTY_IMMORTAL" SpawnRate="1" MeleeTag="CLASS_BARB_MELEE" NumMeleeUnits="4" RangeTag="CLASS_BARB_RANGED" NumRangeUnits="3" SiegeTag="CLASS_BARB_SIEGE" NumSiegeUnits="2" SupportTag="CLASS_BARB_SIEGE" NumSupportUnits="0"/>
+		</Update>
+		<Update>
+			<Where AttackForceType="LowDifficultyCavalryRaid"/>
+			<Set MaxTargetDifficulty="DIFFICULTY_CHIEFTAIN" SpawnRate="2" MeleeTag="CLASS_BARB_LIGHT_CAV" NumMeleeUnits="1" RaidingForce="true"/>
+		</Update>
+		<Update>
+			<Where AttackForceType="CavalryRaid"/>
+			<Set MinTargetDifficulty="DIFFICULTY_WARLORD" MaxTargetDifficulty="DIFFICULTY_EMPEROR" SpawnRate="2" MeleeTag="CLASS_BARB_LIGHT_CAV" NumMeleeUnits="2" RangeTag="CLASS_BARB_HEAVY_CAV" NumRangeUnits="1" RaidingForce="true"/>
+		</Update>
+		<Update>
+			<Where AttackForceType="HighDifficultyCavalryRaid"/>
+			<Set MinTargetDifficulty="DIFFICULTY_IMMORTAL" SpawnRate="1" MeleeTag="CLASS_BARB_LIGHT_CAV" NumMeleeUnits="3" RangeTag="CLASS_BARB_SIEGE" NumRangeUnits="2" RaidingForce="true"/>
+		</Update>
+		<Update>
+			<Where AttackForceType="LowDifficultyCavalryAttack"/>
+			<Set MaxTargetDifficulty="DIFFICULTY_CHIEFTAIN" SpawnRate="2" MeleeTag="CLASS_BARB_LIGHT_CAV" NumMeleeUnits="2" RangeTag="CLASS_BARB_SIEGE" NumRangeUnits="1" SiegeTag="CLASS_BARB_HEAVY_CAV" NumSiegeUnits="1"/>
+		</Update>
+		<Update>
+			<Where AttackForceType="CavalryAttack"/>
+			<Set MinTargetDifficulty="DIFFICULTY_WARLORD" MaxTargetDifficulty="DIFFICULTY_EMPEROR" SpawnRate="2" MeleeTag="CLASS_BARB_LIGHT_CAV" NumMeleeUnits="3" RangeTag="CLASS_BARB_SIEGE" NumRangeUnits="2" SiegeTag="CLASS_BARB_HEAVY_CAV" NumSiegeUnits="1"/>
+		</Update>
+		<Update>
+			<Where AttackForceType="HighDifficultyCavalryAttack"/>
+			<Set MinTargetDifficulty="DIFFICULTY_IMMORTAL" SpawnRate="1" MeleeTag="CLASS_BARB_LIGHT_CAV" NumMeleeUnits="4" RangeTag="CLASS_BARB_SIEGE" NumRangeUnits="3" SiegeTag="CLASS_BARB_HEAVY_CAV" NumSiegeUnits="2"/>
+		</Update>
+		<Update>
+			<Where AttackForceType="LowDifficultyNavalRaid"/>
+			<Set MaxTargetDifficulty="DIFFICULTY_CHIEFTAIN" SpawnRate="2" MeleeTag="CLASS_BARB_NAVAL" NumMeleeUnits="1" RaidingForce="true"/>
+		</Update>
+		<Update>
+			<Where AttackForceType="NavalRaid"/>
+			<Set MinTargetDifficulty="DIFFICULTY_WARLORD" MaxTargetDifficulty="DIFFICULTY_EMPEROR" SpawnRate="2" MeleeTag="CLASS_BARB_NAVAL" NumMeleeUnits="2" RangeTag="CLASS_BARB_NAVAL" NumRangeUnits="1" RaidingForce="true"/>
+		</Update>
+		<Update>
+			<Where AttackForceType="HighDifficultyNavalRaid"/>
+			<Set MinTargetDifficulty="DIFFICULTY_IMMORTAL" SpawnRate="1" MeleeTag="CLASS_BARB_NAVAL" NumMeleeUnits="3" RangeTag="CLASS_BARB_NAVAL" NumRangeUnits="2" RaidingForce="true"/>
+		</Update>
+		<Update>
+			<Where AttackForceType="LowDifficultyNavalAttack"/>
+			<Set MaxTargetDifficulty="DIFFICULTY_CHIEFTAIN" SpawnRate="2" MeleeTag="CLASS_BARB_NAVAL" NumMeleeUnits="2" RangeTag="CLASS_BARB_NAVAL" NumRangeUnits="1" SiegeTag="CLASS_BARB_NAVAL" NumSiegeUnits="1"/>
+		</Update>
+		<Update>
+			<Where AttackForceType="NavalAttack"/>
+			<Set MinTargetDifficulty="DIFFICULTY_WARLORD" MaxTargetDifficulty="DIFFICULTY_EMPEROR" SpawnRate="2" MeleeTag="CLASS_BARB_NAVAL" NumMeleeUnits="3" RangeTag="CLASS_BARB_NAVAL" NumRangeUnits="2" SiegeTag="CLASS_BARB_NAVAL" NumSiegeUnits="1"/>
+		</Update>
+		<Update>
+			<Where AttackForceType="HighDifficultyNavalAttack"/>
+			<Set MinTargetDifficulty="DIFFICULTY_IMMORTAL" SpawnRate="1" MeleeTag="CLASS_BARB_NAVAL" NumMeleeUnits="4" RangeTag="CLASS_BARB_NAVAL" NumRangeUnits="3" SiegeTag="CLASS_BARB_NAVAL" NumSiegeUnits="2"/>
+		</Update>
+	</BarbarianAttackForces>
+</GameInfo>
