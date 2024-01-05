@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="fefdd68f-8631-59d7-8155-c64828d2db60" version="1">
+  <Properties>
+    <Name>Nere's Rebalanced Rock Bands</Name>
+    <Description>Rebalances Rock Bands in several ways. They will die less, but their tourism output has been greatly reduced. Their cost has been greatly increased since they will now live a lot longer. Promotion selection improved. Smart use will be more important.</Description>
+    <LoadOrder>99999</LoadOrder>
+    <Teaser>Rebalances Rock Bands in several ways. They will die less, but their tourism output has been greatly reduced. Their cost has been greatly increased since they will now live a lot longer. Promotion selection improved. Smart use will be more important.</Teaser>
+    <Authors>Nerevatar</Authors>
+    <AffectsSavedGames>0</AffectsSavedGames>
+	<CompatibleVersions>2.0</CompatibleVersions>
+  </Properties>
+  <InGameActions>
+  	<UpdateText id="Text"> <!-- CUSTOM Update localized text -->
+      <Properties>
+        <LoadOrder>99999</LoadOrder>
+      </Properties>
+      <File>RockText.sql</File>
+    </UpdateText> <!-- CUSTOM -->
+    <UpdateDatabase id="Gameplay">
+	  <Properties>
+        <LoadOrder>99999</LoadOrder>
+      </Properties>
+      <File>Rebalanced_Rock_Bands.xml</File>
+    </UpdateDatabase>
+  </InGameActions>
+  <Files>
+    <File>Rebalanced_Rock_Bands.xml</File>
+    <File>RockText.sql</File> <!-- CUSTOM -->
+  </Files>
+</Mod>
